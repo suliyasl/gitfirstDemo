@@ -1,0 +1,30 @@
+8.13
+
+DROP PROCEDURE IF EXISTS proc_initData;
+DELIMITER $
+CREATE PROCEDURE proc_initData()
+BEGIN
+    DECLARE i INT DEFAULT 1;
+    WHILE i<=100000 DO
+ INSERT INTO person values(i,'ck',CEILING(RAND()*2)-1,'a','b','c','d','e','f','s','v','w','a','da','vd');
+        SET i = i+1;
+    END WHILE;
+END $
+CALL proc_initData();
+
+设置自动递增id可以写空
+数据库中插入几十万条数据时，利用索引优化查询，加快查询速度
+
+Excel导出
+
+数据库     map list 循环取出
+
+8.14
+用Java发邮件
+
+8.15
+事务的四大特性
+
+级联 如：删除商品属性，对应商品也删除
+数据库中操作：在做外键关联时，删除时和更新时改为Casade或set null
+
